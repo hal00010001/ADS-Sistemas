@@ -70,7 +70,7 @@ public class ClienteController {
 		
 	}
 	
-	@DeleteMapping("/cliente")
+	@DeleteMapping("/{clienteId}")
 	public ResponseEntity<Void> remover(@PathVariable Long clienteId){
 		
 		if(!repository.existsById(clienteId)) {
