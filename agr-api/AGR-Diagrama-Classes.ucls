@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.agr.domain.exception.BusinessException" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/exception/BusinessException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="150" x="23" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.agr.domain.service.CadastroEnderecoService" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/service/CadastroEnderecoService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="176" x="1374" y="378"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.agr.api.exceptionhandler.Problema" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/api/exceptionhandler/Problema.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="277" width="188" x="213" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.agr.domain.service.CadastroClienteService" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/service/CadastroClienteService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="115" width="161" x="1590" y="378"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="5" language="java" name="com.agr.domain.repository.EnderecoRepository" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/repository/EnderecoRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="61" width="142" x="1374" y="803"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="6" language="java" name="com.agr.domain.ValidationGroups.ClienteId" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/ValidationGroups.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="61" width="101" x="1969" y="378"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="com.agr.domain.pojo.Endereco" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/pojo/Endereco.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="421" width="137" x="609" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.agr.api.controller.EnderecoController" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/api/controller/EnderecoController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="150" x="1483" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="9" language="java" name="com.agr.domain.repository.ClienteRepository" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/repository/ClienteRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="235" x="1627" y="803"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="10" language="java" name="com.agr.api.controller.ClienteController" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/api/controller/ClienteController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="256" x="1673" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="com.agr.domain.ValidationGroups" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/ValidationGroups.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="61" width="121" x="1969" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="com.agr.api.exceptionhandler.Problema.Campo" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/api/exceptionhandler/Problema.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="187" width="151" x="213" y="378"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.agr.domain.pojo.Cliente" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/domain/pojo/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="385" width="138" x="609" y="378"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.agr.AgrApiApplication" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/AgrApiApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="128" x="441" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.agr.api.exceptionhandler.ApiExceptionHandler" project="agr-api" 
+    file="/agr-api/src/main/java/com/agr/api/exceptionhandler/ApiExceptionHandler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="133" width="657" x="786" y="-83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="16">    
+    <bendpoint x="1781" y="378"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="17" name="repository">        
+        <position height="17" width="55" x="1770" y="778"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="15" width="23" x="1759" y="760"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="20" name="enderecoRepository"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="22">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="23" name="campos"/>      
+      <multiplicity id="24" minimum="0" maximum="2147483647">        
+        <position height="15" width="21" x="304" y="352"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="26" name="cadastroCliente"/>      
+      <multiplicity id="27" minimum="0" maximum="1">        
+        <position height="15" width="23" x="1701" y="354"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="29" name="cliente"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="31">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <association id="32">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="33" name="clienteRepository">        
+        <position height="17" width="89" x="1588" y="777"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="35">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="36" name="repository">        
+        <position height="17" width="55" x="1828" y="779"/>      
+      </attribute>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="38">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <association id="39">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="40" name="enderecoService"/>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="15" width="23" x="1487" y="354"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

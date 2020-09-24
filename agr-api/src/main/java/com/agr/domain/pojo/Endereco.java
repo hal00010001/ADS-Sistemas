@@ -23,10 +23,6 @@ public class Endereco {
 	@Column(name = "id_endereco")
 	private Long id;
 	
-	
-//	@Valid
-//	@ConvertGroup(from = Default.class, to = ValidationGroups.ClienteId.class)
-//	@NotNull
 	@ManyToOne
 	@Valid
 	@ConvertGroup(from = Default.class, to = ValidationGroups.ClienteId.class)
