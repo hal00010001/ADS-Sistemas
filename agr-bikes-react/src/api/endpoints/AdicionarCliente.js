@@ -8,7 +8,7 @@ const AdicionarCliente = () => {
     const [telefone, setTelefone] = React.useState('')
 
     function handleSubmit(event){
-        event.preventDefault();
+        
         
         fetch('http://localhost:8080/clientes', {
             method: 'POST',
@@ -28,6 +28,7 @@ const AdicionarCliente = () => {
             console.log(json)
             return json
         })
+        event.preventDefault();
     }
 
     return (
