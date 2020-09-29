@@ -4,9 +4,7 @@ import ListarClientes from './endpoints/ListarClientes';
 
 const Api = () => {
     return (
-        <div>
-            <h1>AGR Bikes API</h1>
-            <h2>Adicionar Cliente</h2>
+        <div className="container-fluid">
             <AdicionarCliente />
             <ListarClientes />
         </div>

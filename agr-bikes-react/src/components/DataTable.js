@@ -18,23 +18,25 @@ function DataTable( props ) {
         <td> {cliente.cpf} </td>
         <td> {cliente.email} </td>
         <td> {cliente.telefone} </td>
-        <td> <a href="#">Alterar</a> </td>
-        <td> <a href="#">Excluir</a> </td>
+        <td><a href="#" className="btn btn-warning btn-circle"><i className="fas fa-edit"></i></a></td>
+        <td><a href="#" className="btn btn-danger btn-circle"><i className="fas fa-trash"></i></a> </td>
+
       </tr>
       
     )
   }
 
   return (
-    
-    <table>
+    <table className="table table-bordered" id="" width="100%" cellSpacing="0">
       <thead>
         <tr>
-          <td>ID</td>
-          <td>NOME</td>
+          <td>Id</td>
+          <td>Nome</td>
           <td>CPF</td>
-          <td>E-MAIL</td>
-          <td>FONE</td>
+          <td>E-mail</td>
+          <td>Telefone</td>
+		  <td>Alterar</td>
+		  <td>Excluir</td>
         </tr>
       </thead>
       <tbody>
