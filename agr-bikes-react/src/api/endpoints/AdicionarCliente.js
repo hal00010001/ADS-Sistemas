@@ -28,6 +28,7 @@ const AdicionarCliente = () => {
             console.log(json)
             return json
         })
+        .catch(err => console.log(err))
         event.preventDefault();
     }
 
