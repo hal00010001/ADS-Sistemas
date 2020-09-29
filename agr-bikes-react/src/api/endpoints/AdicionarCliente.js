@@ -32,6 +32,9 @@ const AdicionarCliente = () => {
     }
 
     return (
+        
+        <div>
+            <h2>Adicionar Cliente</h2>
         <form onSubmit={handleSubmit}>
             <input 
                 type="text" 
@@ -59,6 +62,9 @@ const AdicionarCliente = () => {
             />
             <button type="submit">Enviar</button>
         </form>
+        </div>
+
+        
     );
 };
 

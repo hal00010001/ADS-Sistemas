@@ -1,9 +1,12 @@
-import React from 'react';
+import axios from 'axios';
 
-// import { Container } from './styles';
-
-function ExcluirCliente() {
-  return <div />;
+const excluirCliente = (props) => {
+  console.log(props)
+  axios.delete(`http://localhost:8080/clientes/${props}`)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => console.log(err))
+    
 }
-
-export default ExcluirCliente;
+export default excluirCliente;
