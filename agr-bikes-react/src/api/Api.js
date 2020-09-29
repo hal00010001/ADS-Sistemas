@@ -1,16 +1,15 @@
-import React, { useState }from 'react';
-import AdicionarCliente from './endpoints/AdicionarCliente';
+import React from 'react';
 import ListarClientes from './endpoints/ListarClientes';
-import EditarCliente from './endpoints/EditarCliente';
+import AdicionarCliente from './endpoints/AdicionarCliente';
 
-const Api = () => {
-    /* const [editando, setEditando] = useState(false) */
+
+const Api = () => {    
     
     return (
-        <div>
-            <h1>AGR Bikes API</h1>
-            <EditarCliente />
-            <AdicionarCliente />
+        <div className="container-fluid">
+            <AdicionarCliente 
+            />
+         
             <ListarClientes />
         </div>
     );

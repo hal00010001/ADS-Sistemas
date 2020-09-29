@@ -1,53 +1,59 @@
 import React, { useState } from 'react';
-import editarCliente from '../api/endpoints/EditarCliente';
-import excluirCliente from '../api/endpoints/ExcluirCliente';
-
-// import { Container } from './styles';
+import axios from 'axios';
 
 function DataTable( props ) {
-  const clientes = props.data;
-  const [editando, setEditando] = useState(false);
-
   
-  function mudarEstadoEditando() {
-    setEditando(!editando);
-    return editando;
+  const clientes = props.data;
+  const excluirCliente = (id) => {
+    axios.delete(`http://localhost:8080/clientes/${id}`)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => console.log(err))
+    
+  }
+  const updateContent = (id) => {
+    
+
+    axios.get(`http://localhost:8080/clientes/${id}`)
+      .then(response => {
+        console.log(response)
+      })
   }
   
   const renderClientes = (cliente, index) => {
-    return (
+    return (    
       <tr key={cliente.id}>
         <td> {cliente.id} </td>
         <td> {cliente.nome} </td>
         <td> {cliente.cpf} </td>
         <td> {cliente.email} </td>
         <td> {cliente.telefone} </td>
-        <td> <button 
-          onClick={() => editarCliente(cliente.id)}
-          onClick={mudarEstadoEditando}
-          >Alterar</button> </td>
-        <td> <button onClick={() => excluirCliente(cliente.id)}>Excluir</button> </td>
+        <td><button className="btn btn-warning btn-circle"
+        onClick={() => updateContent(cliente.id)}><i className="fas fa-edit"></i></button></td>
+        <td><a href="#" className="btn btn-danger btn-circle"
+        onClick={() => excluirCliente(cliente.id)}><i className="fas fa-trash"></i></a> </td>
       </tr>
-      
     )
   }
 
   return (
-    
-    <table>
+    <table className="table table-bordered" id="" width="100%" cellSpacing="0">
       <thead>
         <tr>
-          <td>ID</td>
-          <td>NOME</td>
+          <td>Id</td>
+          <td>Nome</td>
           <td>CPF</td>
-          <td>E-MAIL</td>
-          <td>FONE</td>
+          <td>E-mail</td>
+          <td>Telefone</td>
+		  <td>Alterar</td>
+		  <td>Excluir</td>
         </tr>
       </thead>
       <tbody>
         {clientes.map(renderClientes)}
       </tbody>
-    </table>
+      </table>
 
   );
 }
