@@ -16,10 +16,23 @@ const ListarClientes = () => {
   }, [])
 
   return (
-      <div>
-        <DataTable 
-        data={ clientes }/>
-        {clientes.id}
+      <div className="row">
+		<div className="col-xl-12 col-lg-7">
+          <div className="card shadow mb-4">
+		    <div className="card-header py-3">
+              <h6 className="m-0 font-weight-bold text-primary"><i className="fas fa-fw fa-user-edit"></i> Listar Clientes</h6>
+			</div>
+			  <div className="card-body">
+				<div className="table-responsive">
+				  		
+				  <DataTable 
+				  data={ clientes }/>
+				  {clientes.id}
+			
+				</div>
+			  </div>
+		  </div>
+		</div>
       </div>
     )
 }
