@@ -1,12 +1,16 @@
 import React from 'react';
+import ListarClientes from './endpoints/ListarClientes';
 import AdicionarCliente from './endpoints/AdicionarCliente';
 
-const Api = () => {
+
+const Api = () => {    
+    
     return (
-        <div>
-            <h1>AGR Bikes API</h1>
-            <h2>Adicionar Cliente</h2>
-            <AdicionarCliente />
+        <div className="container-fluid">
+            <AdicionarCliente 
+            />
+         
+            <ListarClientes />
         </div>
     );
 };
