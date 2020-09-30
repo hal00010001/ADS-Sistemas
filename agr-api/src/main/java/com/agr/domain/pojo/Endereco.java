@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.groups.ConvertGroup;
 import javax.validation.groups.Default;
@@ -22,17 +23,24 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_endereco")
 	private Long id;
-	
-	@ManyToOne
+		
 	@Valid
 	@ConvertGroup(from = Default.class, to = ValidationGroups.ClienteId.class)
 	@NotNull
+	@ManyToOne
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
+	@NotBlank
 	private String rua;
+	
+	@NotBlank
 	private String numero;
+	
+	@NotBlank
 	private String bairro;
+	
+	@NotBlank
 	private String cep;
 	
 	public Long getId() {
