@@ -2,11 +2,18 @@ import React from 'react';
 import axios from 'axios';
 
 function EditarCliente(props) {
-  const [nome, setNome] = React.useState('')
-  const [cpf, setCpf] = React.useState('')
-  const [email, setEmail] = React.useState('')
-  const [telefone, setTelefone] = React.useState('')
+  //const [nome, setNome] = React.useState('')
+  //const [cpf, setCpf] = React.useState('')
+  //const [email, setEmail] = React.useState('')
+  //const [telefone, setTelefone] = React.useState('')
 
+  var nome = prompt("Novo nome?")
+  var cpf = prompt("Novo CPF?")
+  var email = prompt("Novo email?")
+  var nome = prompt("Novo telefone?")
+  console.log("teste")
+  alert("Digite")
+  
   const data = {
     'nome': nome,
     'cpf': cpf,

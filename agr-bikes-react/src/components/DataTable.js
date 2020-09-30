@@ -20,6 +20,25 @@ function DataTable( props ) {
         console.log(response)
       })
   }
+  function funcEdit(id) {
+	  var id = id
+	  var nome = prompt("Novo nome?")
+	  var cpf = prompt("Novo cpf?")
+	  var email = prompt("Novo email?")
+	  var telefone = prompt("Novo telefone?")
+	  
+	  const data = {
+    'nome': nome,
+    'cpf': cpf,
+    'email': email,
+    'telefone': telefone
+  }
+	  
+	  axios.put(`http://localhost:8080/clientes/${id}`,data)
+	  .then(response => {
+        console.log(response)
+      })
+  }
   
   const renderClientes = (cliente, index) => {
     return (    
@@ -30,7 +49,9 @@ function DataTable( props ) {
         <td> {cliente.email} </td>
         <td> {cliente.telefone} </td>
         <td><button className="btn btn-warning btn-circle"
-        onClick={() => updateContent(cliente.id)}><i className="fas fa-edit"></i></button></td>
+        onClick={ () => funcEdit(cliente.id)
+			//() => updateContent(cliente.id);
+			}><i className="fas fa-edit"></i></button></td>
         <td><a href="#" className="btn btn-danger btn-circle"
         onClick={() => excluirCliente(cliente.id)}><i className="fas fa-trash"></i></a> </td>
       </tr>
