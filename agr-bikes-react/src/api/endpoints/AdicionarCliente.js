@@ -62,7 +62,7 @@ const AdicionarCliente = () => {
 					/>
 				  </div>
 				  </div>
-  		  	      <button type="submit" className="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4" style="margin:0;left:33%"> Cadastrar Cliente </button>
+  		  	      <button type="submit" className="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Cadastrar Cliente </button>
 				</div>
 			  </form>
 			</div>
