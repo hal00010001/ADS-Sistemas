@@ -5,6 +5,7 @@ public class Estoque {
 	private int id;
 	private int idProduto;
 	private int quantidade;
+	private String nomeProduto;
 	
 	public int getId() {
 		return id;
@@ -23,6 +24,12 @@ public class Estoque {
 	}
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 	
 }
