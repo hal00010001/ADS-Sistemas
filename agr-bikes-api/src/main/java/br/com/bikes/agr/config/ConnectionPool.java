@@ -10,7 +10,7 @@ public class ConnectionPool {
 
 	protected static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/agrbikes", "root", "mysql5.7");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/agrbikes?createDatabaseIfNotExist=true&serverTimezone=UTC", "root", "mysql5.7");
 	}
 	
 	protected ResultSet getResultSet(String sql) {
