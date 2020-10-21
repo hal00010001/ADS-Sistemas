@@ -8,6 +8,7 @@ import br.com.bikes.agr.rest.CategoriaService;
 import br.com.bikes.agr.rest.ClienteService;
 import br.com.bikes.agr.rest.EnderecoService;
 import br.com.bikes.agr.rest.EstoqueService;
+import br.com.bikes.agr.rest.PrecoService;
 import br.com.bikes.agr.rest.ProdutoService;
 
 @Component
@@ -20,7 +21,8 @@ public class JerseyConfig extends ResourceConfig {
 		register(AvaliacaoService.class).
 		register(ProdutoService.class).
 		register(CategoriaService.class).
-		register(EstoqueService.class);
+		register(EstoqueService.class).
+		register(PrecoService.class);
 				
 	}
 	

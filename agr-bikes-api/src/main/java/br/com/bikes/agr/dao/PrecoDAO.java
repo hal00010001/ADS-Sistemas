@@ -15,7 +15,7 @@ public class PrecoDAO extends ConnectionPool implements PrecoInterface {
 	private final String sqlSelectPrecos = "select id_preco, prc.id_produto, valor, pdt.descricao as nome_produto from preco as prc, produto as pdt where prc.id_produto = pdt.id_produto";
 	private final String sqlSelectPrecosByIdProduto = "select id_preco, prc.id_produto, valor, pdt.descricao as nome_produto from preco as prc, produto as pdt where prc.id_produto = pdt.id_produto and prc.id_produto = ?";	
 	private final String sqlInsertPreco = "insert into preco (id_produto, valor) values (?, ?)";
-	private final String sqlUpdatePreco = "update preco set valor = ? where valor = ?";
+	private final String sqlUpdatePreco = "update preco set valor = ? where id_produto = ?";
 		
 	@Override
 	public List<Preco> getPrecosLista() {
