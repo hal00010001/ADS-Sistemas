@@ -13,8 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import br.com.bikes.agr.dao.CategoriaDAO;
 import br.com.bikes.agr.entidade.Categoria;
-import br.com.bikes.agr.entidade.CategoriaDAO;
 
 @Path("/categoria")
 public class CategoriaService {
