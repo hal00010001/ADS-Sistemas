@@ -1,0 +1,1 @@
+insert into pedido (numero_pedido, status, id_produto, id_cliente) values (0, 1, 2, 1)

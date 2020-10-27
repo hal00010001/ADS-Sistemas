@@ -1,14 +1,12 @@
 package br.com.bikes.agr.entidade;
 
-import java.security.Timestamp;
-
 public class NotaFiscal {
 
 	private int id;
-	private Timestamp dataInclusao;
+	private String dataInclusao;
+	private int numeroNota;
 	private int idCliente;
-	private int idPedido;	
-	private int idProduto;
+	private int numeroPedido;	
 	private String nomeCliente;
 	private String nomeProduto;	
 	
@@ -17,30 +15,30 @@ public class NotaFiscal {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public Timestamp getDataInclusao() {
+	}	
+	public String getDataInclusao() {
 		return dataInclusao;
 	}
-	public void setDataInclusao(Timestamp dataInclusao) {
+	public void setDataInclusao(String dataInclusao) {
 		this.dataInclusao = dataInclusao;
+	}	
+	public int getNumeroNota() {
+		return numeroNota;
+	}
+	public void setNumeroNota(int numeroNota) {
+		this.numeroNota = numeroNota;
 	}
 	public int getIdCliente() {
 		return idCliente;
 	}
 	public void setIdCliente(int idCliente) {
 		this.idCliente = idCliente;
+	}	
+	public int getNumeroPedido() {
+		return numeroPedido;
 	}
-	public int getIdPedido() {
-		return idPedido;
-	}
-	public void setIdPedido(int idPedido) {
-		this.idPedido = idPedido;
-	}
-	public int getIdProduto() {
-		return idProduto;
-	}
-	public void setIdProduto(int idProduto) {
-		this.idProduto = idProduto;
+	public void setNumeroPedido(int numeroPedido) {
+		this.numeroPedido = numeroPedido;
 	}
 	public String getNomeCliente() {
 		return nomeCliente;

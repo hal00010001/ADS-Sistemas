@@ -3,6 +3,7 @@ package br.com.bikes.agr.entidade;
 public class Pedido {
 
 	private int id;
+	private int numeroPedido;
 	private int status;
 	private int idProduto;
 	private int idCliente;
@@ -15,6 +16,12 @@ public class Pedido {
 	public void setId(int id) {
 		this.id = id;
 	}	
+	public int getNumeroPedido() {
+		return numeroPedido;
+	}
+	public void setNumeroPedido(int numeroPedido) {
+		this.numeroPedido = numeroPedido;
+	}
 	public int getStatus() {
 		return status;
 	}
