@@ -21,7 +21,7 @@ public class NotaFiscal {
 	}
 	public void setDataInclusao(String dataInclusao) {
 		this.dataInclusao = dataInclusao;
-	}	
+	}
 	public int getNumeroNota() {
 		return numeroNota;
 	}

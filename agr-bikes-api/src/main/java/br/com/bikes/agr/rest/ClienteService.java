@@ -120,14 +120,20 @@ public class ClienteService {
 	public String removerCliente(@PathParam("id") int id) {
 		
 		String msg = "";
+		int linhasAlteradas = 0;
 		
 		try {
-			dao.deleteCliente(id);
+			linhasAlteradas = dao.deleteCliente(id);
 		}
 		catch (Exception ex) {
-			msg = "Erro ao remover o cliente!";
+			System.out.println("Erro: " + ex.getMessage());
 		}
-		msg = "Cliente removido com sucesso!";
+		if(linhasAlteradas > 0) {
+			msg = "Cliente removido com sucesso!";
+		}
+		else {
+			msg = "Erro ao remover o cliente!";
+		}		
 		
 		return msg;
 		
