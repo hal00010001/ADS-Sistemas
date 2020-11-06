@@ -162,8 +162,114 @@
 
         </nav>
         <!-- End of Topbar -->
+
 		<!-- MAIN PAGE CONTENT -->
+		<div class="container-fluid">
+          <div class="row">
+			<!-- Listar Cliente -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-user-edit"></i> Listar Clientes</h6>
+				</div>
+				<div class="card-body">
+				  <table class="table table-bordered" id="" width="100%" cellSpacing="0">
+					<thead>
+					  <tr>
+						<td>Id</td>
+						<td>Nome</td>
+						<td>CPF</td>
+						<td>E-mail</td>
+						<td>Telefone</td>
+						<td>Alterar</td>
+						<td>Excluir</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr key={cliente.id}>
+						<td> {cliente.id} </td>
+						<td> {cliente.nome} </td>
+						<td> {cliente.cpf} </td>
+						<td> {cliente.email} </td>
+						<td> {cliente.telefone} </td>
+						<td><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></td>
+						<td><a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a> </td>
+					  </tr>	
+					</tbody>
+				  </table>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Cliente -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-user-edit"></i> Adicionar Clientes</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Nome" value="">
+						</div>
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="CPF" value="">
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="email" class="form-control form-control-user" id="" placeholder="E-mail" value="">
+						</div>
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Telefone" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Cadastrar Cliente </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Avaliação -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-user-edit"></i> Adicionar Avaliação</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-12 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Digite seu comentário de avaliação" value="">
+						</div>
+					  </div>
+					  
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Enviar Comentário </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+        </div>
+		<!-- End of MAIN PAGE CONTENT  -->
+		
+		<div>
+		<br>
+		<br>
+		<h1>Início react-app</h1>
+		<br>
+		<br>
+		</div>
 		<div id="root"></div>
+		
+
       </div>
       <!-- End of Main Content -->
 
