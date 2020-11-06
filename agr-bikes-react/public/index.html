@@ -302,9 +302,6 @@
 					<div class="form-group">
 					  <div class="row">
 						<div class="col-sm-4 mb-3 mb-sm-4">
-						  <input type="text" class="form-control form-control-user" id="" placeholder="Nome" value="">
-						</div>
-						<div class="col-sm-4 mb-3 mb-sm-4">
 						  <input type="text" class="form-control form-control-user" id="" placeholder="ID Cliente" value="">
 						</div>
 						<div class="col-sm-4 mb-3 mb-sm-4">
@@ -404,7 +401,7 @@
 			</div>
 		  </div>
 		  <div class="row">
-			<!-- Relatório de Venda por Período -->
+			<!-- Relatório de Vendas por Período -->
 			<div class="col-xl-12 col-lg-7">
 			  <div class="card shadow mb-4">
 				<div class="card-header py-3">
@@ -415,7 +412,7 @@
 					<div class="form-group">
 					  <div class="row">
 						<div class="col-sm-3 mb-3 mb-sm-4">
-						  <input type="text" class="form-control form-control-user" id="" placeholder="Produto" value="">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="ID do Produto" value="">
 						</div>
 						<div class="col-sm-3 mb-3 mb-sm-4">
 						  <input type="text" class="form-control form-control-user" id="" placeholder="Data Inicial" value="">
@@ -427,10 +424,54 @@
 					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Gerar Relatório </button>
 					</div>
 				  </form>
+				
+				  <table class="table table-bordered" id="" width="100%" cellSpacing="0">
+					<thead>
+					  <tr>
+						<td>Id Pedido</td>
+						<td>Id Produto</td>
+						<td>Id Cliente</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+					  </tr>	
+					</tbody>
+				  </table>
+				</div>
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-boxes"></i> Relatório de Estoque</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Gerar Relatório </button>
+					</div>
+				  </form>
+				  <table class="table table-bordered" id="" width="100%" cellSpacing="0">
+					<thead>
+					  <tr>
+						<td>Id Produto</td>
+						<td>Quantidade em Estoque</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td> </td>
+						<td> </td>
+					  </tr>	
+					</tbody>
+				  </table>
 				</div>
 			  </div>
 			</div>
 		  </div>
+
+
 
         </div>
 		<!-- End of MAIN PAGE CONTENT  -->
