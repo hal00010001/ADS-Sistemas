@@ -162,8 +162,330 @@
 
         </nav>
         <!-- End of Topbar -->
+
 		<!-- MAIN PAGE CONTENT -->
+		<div class="container-fluid">
+		
+          <div class="row">
+		    <div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"> ------- Ideia Geral ---------</h6>
+				</div>
+				<p>Módulo Gestor abre página de autenticação.</p>
+				<p>Depois, abre opções na lateral para clientes, categorias, produtos, vendas e relatórios </p>
+				<p>Módulo feedback já abre a parte de enviar feedback.</p>
+				<p></p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <div class="row">
+			<!-- Autenticação de Usuário -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-box-open"></i> Entre com login e senha</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Login" value="">
+						</div>
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="password" class="form-control form-control-user" id="" placeholder="Senha" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Acessar </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <div class="row">
+			<!-- Listar Cliente -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-user-friends"></i> Listar Clientes</h6>
+				</div>
+				<div class="card-body">
+				  <table class="table table-bordered" id="" width="100%" cellSpacing="0">
+					<thead>
+					  <tr>
+						<td>Id</td>
+						<td>Nome</td>
+						<td>CPF</td>
+						<td>E-mail</td>
+						<td>Telefone</td>
+						<td>Alterar</td>
+						<td>Excluir</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr key={cliente.id}>
+						<td> {cliente.id} </td>
+						<td> {cliente.nome} </td>
+						<td> {cliente.cpf} </td>
+						<td> {cliente.email} </td>
+						<td> {cliente.telefone} </td>
+						<td><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></td>
+						<td><a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a> </td>
+					  </tr>	
+					</tbody>
+				  </table>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Cliente -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-user-edit"></i> Adicionar Clientes</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Nome" value="">
+						</div>
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="CPF" value="">
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="email" class="form-control form-control-user" id="" placeholder="E-mail" value="">
+						</div>
+						<div class="col-sm-6 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Telefone" value="">
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="email" class="form-control form-control-user" id="" placeholder="Rua" value="">
+						</div>
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Número" value="">
+						</div>
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Bairro" value="">
+						</div>
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="CEP" value="">
+						</div>						
+					  </div>
+
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Cadastrar Cliente </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Avaliação -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-comment-dots"></i> Adicionar Avaliação</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="ID Cliente" value="">
+						</div>
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Nota" value="">
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-sm-12 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Digite seu comentário de avaliação" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Enviar Comentário </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Categoria de Produto -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-clipboard-list"></i> Adicionar Categoria de Produto</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-12 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Categoria" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Cadastrar Categoria </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Produto -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-box-open"></i> Adicionar Produto</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="ID da Categoria" value="">
+						</div>
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Nome do Produto" value="">
+						</div>
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Preço do Produto" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Cadastrar Produto </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Adicionar Pedido -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-shopping-basket"></i> Adicionar Pedido</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="ID do Cliente" value="">
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Quantidade do Produto" value="">
+						</div>
+						<div class="col-sm-4 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="ID do Produto" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Cadastrar Produto </button>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<!-- Relatório de Vendas por Período -->
+			<div class="col-xl-12 col-lg-7">
+			  <div class="card shadow mb-4">
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-file-invoice-dollar"></i> Relatório de Vendas por Período</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="ID do Produto" value="">
+						</div>
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Data Inicial" value="">
+						</div>
+						<div class="col-sm-3 mb-3 mb-sm-4">
+						  <input type="text" class="form-control form-control-user" id="" placeholder="Data Final" value="">
+						</div>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Gerar Relatório </button>
+					</div>
+				  </form>
+				
+				  <table class="table table-bordered" id="" width="100%" cellSpacing="0">
+					<thead>
+					  <tr>
+						<td>Id Pedido</td>
+						<td>Id Produto</td>
+						<td>Id Cliente</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+					  </tr>	
+					</tbody>
+				  </table>
+				</div>
+				<div class="card-header py-3">
+				  <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-boxes"></i> Relatório de Estoque</h6>
+				</div>
+				<div class="card-body">
+				  <form onSubmit={handleSubmit} class="user">
+					<div class="form-group">
+					  <div class="row">
+					  <button type="submit" class="btn btn-primary btn-user col-sm-4 mb-3 mb-sm-4"> Gerar Relatório </button>
+					</div>
+				  </form>
+				  <table class="table table-bordered" id="" width="100%" cellSpacing="0">
+					<thead>
+					  <tr>
+						<td>Id Produto</td>
+						<td>Quantidade em Estoque</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td> </td>
+						<td> </td>
+					  </tr>	
+					</tbody>
+				  </table>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+
+
+        </div>
+		<!-- End of MAIN PAGE CONTENT  -->
+		
+		<div>
+		<br>
+		<br>
+		<h1>Início react-app</h1>
+		<br>
+		<br>
+		</div>
 		<div id="root"></div>
+		
+
       </div>
       <!-- End of Main Content -->
 
