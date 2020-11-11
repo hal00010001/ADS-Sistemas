@@ -54,7 +54,7 @@ function SideBar() {
 					<Link to="/vendas">
 						<a className="collapse-item" href="/#">Fazer Pedido</a>
 					</Link>
-					<Link to="/cupomfiscal">
+					<Link to="/cupom">
 						<a className="collapse-item" href="/#">Emitir Cupom Fiscal</a>
 					</Link>
 				</div>

@@ -5,11 +5,11 @@ import ListarClientes from './components/ListarClientes';
 import ListarProdutos from './components/ListarProdutos';
 import ListarVendas from './components/ListarVendas';
 import Avaliacao from './components/forms/Avaliacao';
+import EmitirCupom from './components/forms/EmitirCupom';
 import RelatorioDeVendas from './components/forms/RelatorioDeVendas';
 import ItensEstoque from './components/forms/ItensEstoque';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
 				<Route path="/produtos"component={ListarProdutos}/>
 				<Route path="/vendas" component={ListarVendas} />
 				<Route path="/add" component={Avaliacao} />
+				<Route path="/cupom" component={EmitirCupom} />
 				<Route path="/relatorios" component={RelatorioDeVendas} />
 				<Route path="/estoque" component={ItensEstoque} />
 			</Switch>	
