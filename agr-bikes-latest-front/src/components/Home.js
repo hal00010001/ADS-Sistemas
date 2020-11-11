@@ -4,7 +4,7 @@ import React from 'react';
 
 function Home() {
   return(
-      <h1>Home</h1>
+		<img src="../../homebike.jpg" className="col-lg-10 d-none d-lg-block" alt="AGR Bikes Home"></img>
   );
 }
 
