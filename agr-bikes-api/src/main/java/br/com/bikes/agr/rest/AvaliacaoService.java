@@ -13,10 +13,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import br.com.bikes.agr.dao.AvaliacaoDAO;
 import br.com.bikes.agr.entidade.Avaliacao;
 
 @Path("/avaliacao")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AvaliacaoService {
 
 	private AvaliacaoDAO dao;
@@ -26,7 +29,8 @@ public class AvaliacaoService {
 		dao = new AvaliacaoDAO();
 	}
 	
-	@GET	
+	@GET
+	@CrossOrigin(origins = "http://localhost:3000")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Avaliacao> listarAvaliacoes(){
 		
@@ -43,8 +47,9 @@ public class AvaliacaoService {
 		
 	}
 	
-	@GET
+	@GET	
 	@Path("/{id}")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Avaliacao> listarAvaliacoesById(@PathParam("id") int id){
@@ -64,6 +69,7 @@ public class AvaliacaoService {
 	
 	@GET
 	@Path("/cliente/{id}")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Avaliacao> listarAvaliacoesByIdCliente(@PathParam("id") int id){
@@ -82,6 +88,7 @@ public class AvaliacaoService {
 	}
 			
 	@POST	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String adicionarAvaliacao(Avaliacao avaliacao) {
@@ -108,6 +115,7 @@ public class AvaliacaoService {
 	
 	@PUT
 	@Path("/{id}")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String atualizarAvaliacao(@PathParam("id") int id, Avaliacao avaliacao) {
@@ -134,6 +142,7 @@ public class AvaliacaoService {
 	
 	@DELETE
 	@Path("/{id}")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String removerAvaliacao(@PathParam("id") int id) {

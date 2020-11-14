@@ -80,7 +80,7 @@ public class EstoqueDAO extends ConnectionPool implements EstoqueInterface {
 		PreparedStatement pstm;
 		try {
 			pstm = super.getConnection().prepareStatement(sqlInsertEstoque);
-			pstm.setInt(1, estoque.getIdProduto());						
+			pstm.setInt(1, estoque.getIdProduto());			
 			linhasAlteradas = pstm.executeUpdate();
 			pstm.close();
 		} 
@@ -113,8 +113,7 @@ public class EstoqueDAO extends ConnectionPool implements EstoqueInterface {
 		}
 		catch (Exception ex) {
 			System.out.println("Erro no updateEstoque: " + ex.getMessage());
-		}
-		
+		}		
 		return linhasAlteradas;
 		
 	}

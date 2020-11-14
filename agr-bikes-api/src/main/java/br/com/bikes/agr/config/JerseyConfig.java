@@ -27,7 +27,7 @@ public class JerseyConfig extends ResourceConfig {
 		register(PrecoService.class).
 		register(PedidoService.class).
 		register(NotaFiscalService.class);
-				
+		
 	}
 	
 }

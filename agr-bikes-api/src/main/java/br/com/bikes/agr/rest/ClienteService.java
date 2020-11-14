@@ -13,6 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import br.com.bikes.agr.dao.ClienteDAO;
 import br.com.bikes.agr.entidade.Cliente;
 
@@ -26,7 +28,8 @@ public class ClienteService {
 		dao = new ClienteDAO();
 	}
 	
-	@GET	
+	@CrossOrigin(origins = "http://localhost:3000")
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Cliente> listarClientes(){
 		
@@ -43,8 +46,9 @@ public class ClienteService {
 		
 	}
 	
-	@GET
-	@Path("/{id}")
+	@CrossOrigin(origins = "http://localhost:3000")
+	@GET	
+	@Path("/{id}")		
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Cliente> listarClientesById(@PathParam("id") int id){
@@ -61,8 +65,9 @@ public class ClienteService {
 		return lista;
 		
 	}
-			
-	@POST	
+		
+	@CrossOrigin(origins = "http://localhost:3000")
+	@POST		
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String adicionarCliente(Cliente cliente) {
@@ -87,8 +92,9 @@ public class ClienteService {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PUT
-	@Path("/{id}")
+	@Path("/{id}")	
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String atualizarCliente(@PathParam("id") int id, Cliente cliente) {
@@ -113,8 +119,9 @@ public class ClienteService {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@DELETE
-	@Path("/{id}")
+	@Path("/{id}")	
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String removerCliente(@PathParam("id") int id) {

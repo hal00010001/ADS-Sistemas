@@ -69,19 +69,24 @@ public class EstoqueService {
 		String msg = "";
 		int linhasAlteradas = 0;
 		
-		try {
-			linhasAlteradas = dao.insertEstoque(estoque);
-		}
-		catch (Exception ex) {
-			System.out.println("Erro: " + ex.getMessage());			
-		}
-		if(linhasAlteradas > 0) {
-			msg = "Estoque salvo com sucesso!";
+		System.out.println("Id: " + estoque.getIdProduto());
+		if (dao.getEstoqueByIdProdutoLista(estoque.getIdProduto()).isEmpty()) {
+			try {
+				linhasAlteradas = dao.insertEstoque(estoque);
+			}
+			catch (Exception ex) {
+				System.out.println("Erro: " + ex.getMessage());			
+			}
+			if(linhasAlteradas > 0) {
+				msg = "Estoque salvo com sucesso!";
+			}
+			else {
+				msg = "Estoque não foi salvo!";
+			}
 		}
 		else {
-			msg = "Estoque não foi salvo!";
+			msg = "Produto já adicionado ao estoque";
 		}		
-		
 		return msg;
 		
 	}
