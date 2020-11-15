@@ -111,8 +111,7 @@ public class EstoqueService {
 		}
 		else {
 			msg = "Estoque não foi atualizado!";
-		}
-		
+		}		
 		return msg;
 		
 	}

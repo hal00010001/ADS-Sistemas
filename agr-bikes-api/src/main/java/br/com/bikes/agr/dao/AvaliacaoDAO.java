@@ -14,7 +14,7 @@ import br.com.bikes.agr.interfaces.AvaliacaoInterface;
 
 public class AvaliacaoDAO extends ConnectionPool implements AvaliacaoInterface {
 
-	private final String sqlSelectAvaliacoes = "select id_avaliacao, comentario, nota, data_inclusao, ava.id_cliente, cli.nome as nome from avaliacao as ava, cliente as cli where ava.id_cliente = cli.id_cliente";
+	private final String sqlSelectAvaliacoes = "select id_avaliacao, comentario, nota, data_inclusao, ava.id_cliente, cli.nome as nome from avaliacao as ava, cliente as cli where ava.id_cliente = cli.id_cliente order by id_avaliacao";
 	private final String sqlSelectAvaliacoesById = "select id_avaliacao, comentario, nota, data_inclusao, ava.id_cliente, cli.nome as nome from avaliacao as ava, cliente as cli where ava.id_cliente = cli.id_cliente and ava.id_avaliacao = ?";
 	private final String sqlSelectAvaliacoesByIdCliente = "select id_avaliacao, comentario, nota, data_inclusao, ava.id_cliente, cli.nome as nome from avaliacao as ava, cliente as cli where ava.id_cliente = cli.id_cliente and ava.id_cliente = ?";
 	private final String sqlInsertAvaliacao = "insert into avaliacao (comentario, nota, data_inclusao, id_cliente) values (?, ?, now(), ?)";
