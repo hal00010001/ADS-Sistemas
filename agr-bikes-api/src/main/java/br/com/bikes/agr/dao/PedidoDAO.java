@@ -12,15 +12,15 @@ import br.com.bikes.agr.interfaces.PedidoInterface;
 
 public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 
-	private final String sqlSelectPedidos = "select id_pedido, numero_pedido as numPedido, status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente order by numero_pedido";
-	private final String sqlSelectPedidoRecente = "select id_pedido, numero_pedido as numPedido, status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente and status = 0 order by numPedido desc limit 1";
-	private final String sqlSelectPedidosByIdProduto = "select id_pedido, numero_pedido as numPedido, status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where pdo.id_produto = ?";
-	private final String sqlSelectPedidosByIdCliente = "select id_pedido, numero_pedido as numPedido, status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where pdo.id_cliente = ?";
-	private final String sqlSelectPedidosByIdClienteRecente = "select id_pedido, numero_pedido as numPedido, status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente and pdo.id_cliente = ? and status = 0 order by numPedido desc limit 1";
-	private final String sqlSelectPedidoByNumeroPedido = "select id_pedido, numero_pedido as numPedido, status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where numPedido = ?";
+	private final String sqlSelectPedidos = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente order by numero_pedido";
+	private final String sqlSelectPedidoRecente = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente and status = 0 order by numPedido desc limit 1";
+	private final String sqlSelectPedidosByIdProduto = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where pdo.id_produto = ?";
+	private final String sqlSelectPedidosByIdCliente = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where pdo.id_cliente = ?";
+	private final String sqlSelectPedidosByIdClienteRecente = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente and pdo.id_cliente = ? and status = 0 order by numPedido desc limit 1";
+	private final String sqlSelectPedidoByNumeroPedido = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where numPedido = ?";
 	private final String sqlSelectPedidoSomaByNumeroPedido = "select sum(prc.preco) from pedido as pdd, produto as pdt preco as prc where numPedido = ? and pdd.id_produto = pdt.id_produto group by prc.preco";
-	private final String sqlInsertPedido = "insert into pedido (numero_pedido, status, id_produto, id_cliente) values (?, 0, ?, ?)";
-	private final String sqlUpdatePedido = "update pedido set status = 1 where numero_pedido = ?";
+	private final String sqlInsertPedido = "insert into pedido (numero_pedido, status_pedido, id_produto, id_cliente) values (?, 0, ?, ?)";
+	private final String sqlUpdatePedido = "update pedido set status_pedido = ? where numero_pedido = ?";											
 	private final String sqlDeletePedido = "delete from pedido where id_pedido = ?";
 	
 	@Override
@@ -35,6 +35,7 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 				var bean = new Pedido();
 				bean.setId(rst.getInt("id_pedido"));
 				bean.setNumeroPedido(rst.getInt("numPedido"));
+				bean.setStatus(rst.getInt("status"));
 				bean.setIdCliente(rst.getInt("id_cliente"));
 				bean.setIdProduto(rst.getInt("id_produto"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
@@ -87,6 +88,7 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 				var bean = new Pedido();
 				bean.setId(rst.getInt("id_pedido"));
 				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setStatus(rst.getInt("status"));
 				bean.setIdCliente(rst.getInt("id_cliente"));
 				bean.setIdProduto(rst.getInt("id_produto"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
@@ -117,6 +119,7 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 				var bean = new Pedido();
 				bean.setId(rst.getInt("id_pedido"));
 				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setStatus(rst.getInt("status"));
 				bean.setIdCliente(rst.getInt("id_cliente"));
 				bean.setIdProduto(rst.getInt("id_produto"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
@@ -147,6 +150,7 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 				var bean = new Pedido();
 				bean.setId(rst.getInt("id_pedido"));
 				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setStatus(rst.getInt("status"));
 				bean.setIdCliente(rst.getInt("id_cliente"));
 				bean.setIdProduto(rst.getInt("id_produto"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
@@ -248,16 +252,15 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 	}
 	
 	@Override
-	public int updatePedido(int numeroPedido) {
+	public int updatePedido(int numPedido) {
 		
 		int linhasAlteradas = 0;
-		
-		NotaFiscalDAO daoNF = new NotaFiscalDAO();
-		
+				
 		PreparedStatement pstm;
 		try {
 			pstm = super.getConnection().prepareStatement(sqlUpdatePedido);
-			pstm.setInt(1, numeroPedido);
+			pstm.setInt(1, 1);
+			pstm.setInt(2, numPedido);
 			linhasAlteradas = pstm.executeUpdate();
 			pstm.close();			
 		}

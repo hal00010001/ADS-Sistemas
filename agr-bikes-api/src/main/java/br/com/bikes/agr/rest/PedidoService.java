@@ -165,13 +165,13 @@ public class PedidoService {
 	@PUT	
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String fecharPedido(int numPedido) {
+	public String fecharPedido(Pedido pedido) {
 		
 		String msg = "";
 		int linhasAlteradas = 0;
 		
 		try {
-			linhasAlteradas = dao.updatePedido(numPedido);
+			linhasAlteradas = dao.updatePedido(pedido.getNumeroPedido());
 		}
 		catch (Exception ex) {
 			System.out.println("Erro: " + ex.getMessage());			
