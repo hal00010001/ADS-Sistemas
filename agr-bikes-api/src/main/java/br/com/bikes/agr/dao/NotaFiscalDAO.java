@@ -14,11 +14,11 @@ import br.com.bikes.agr.interfaces.NotaFiscalInterface;
 
 public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface {
 
-	private final String sqlSelectNotasFiscais = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdo.descricao as nomeProduto from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.descricao";
-	private final String sqlSelectNotasFiscaisById = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdo.descricao as nomeProduto from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.descricao and id_nota = ?";
-	private final String sqlSelectNotasFiscaisByNumeroNota = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdo.descricao as nomeProduto from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.descricao and id_nota = ?";	
-	private final String sqlSelectNotasFiscaisByNumeroPedido = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdo.descricao as nomeProduto from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.descricao and nfc.numero_pedido = ?";
-	private final String sqlSelectNotasFiscaisByIdCliente = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdo.descricao as nomeProduto from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.descricao and nfc.id_cliente = ?";
+	private final String sqlSelectNotasFiscais = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdt.descricao as nomeProduto, preco from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.id_produto";
+	private final String sqlSelectNotasFiscaisById = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdt.descricao as nomeProduto, preco from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.id_produto and id_nota = ?";
+	private final String sqlSelectNotasFiscaisByNumeroNota = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdt.descricao as nomeProduto, preco from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.id_produto and id_nota = ?";	
+	private final String sqlSelectNotasFiscaisByNumeroPedido = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdt.descricao as nomeProduto, preco from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.id_produto and nfc.numero_pedido = ?";
+	private final String sqlSelectNotasFiscaisByIdCliente = "select id_nota, data_inclusao, nfc.id_cliente, nfc.numero_pedido as numPedido, cli.nome as nomeCliente, pdt.descricao as nomeProduto, preco from nota_fiscal as nfc, cliente as cli, pedido as pdo, produto as pdt where nfc.numero_pedido = pdo.numero_pedido and nfc.id_cliente = cli.id_cliente and pdo.id_produto = pdt.id_produto and nfc.id_cliente = ?";
 	private final String sqlInsertNotaFiscal = "insert into nota_fiscal (data_inclusao, id_cliente, numero_pedido, preco) values (now(), ?, ?, ?)";
 	private final String sqlUpdateNotaFiscal = "update nota_fiscal set id_cliente = ?, numero_pedido = ? where id_nota = ?";
 	private final String sqlDeleteNotaFiscal = "delete from nota_fiscal where id_nota = ?";
@@ -38,9 +38,10 @@ public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface
 				bean.setId(rst.getInt("id_nota"));
 				bean.setDataInclusao(df.format(rst.getTimestamp("data_inclusao")));				
 				bean.setIdCliente(rst.getInt("id_cliente"));
-				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setNumeroPedido(rst.getInt("numPedido"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
-				bean.setNomeProduto(rst.getString("nome_produto"));
+				bean.setNomeProduto(rst.getString("nomeProduto"));
+				bean.setPreco(rst.getDouble("preco"));
 				lista.add(bean);
 				
 			}			
@@ -70,9 +71,10 @@ public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface
 				bean.setId(rst.getInt("id_nota"));
 				bean.setDataInclusao(df.format(rst.getTimestamp("data_inclusao")));				
 				bean.setIdCliente(rst.getInt("id_cliente"));
-				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setNumeroPedido(rst.getInt("numPedido"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
-				bean.setNomeProduto(rst.getString("nome_produto"));
+				bean.setNomeProduto(rst.getString("nomeProduto"));
+				bean.setPreco(rst.getDouble("preco"));
 				lista.add(bean);
 				
 			}			
@@ -102,9 +104,10 @@ public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface
 				bean.setId(rst.getInt("id_nota"));
 				bean.setDataInclusao(df.format(rst.getTimestamp("data_inclusao")));				
 				bean.setIdCliente(rst.getInt("id_cliente"));
-				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setNumeroPedido(rst.getInt("numPedido"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
-				bean.setNomeProduto(rst.getString("nome_produto"));
+				bean.setNomeProduto(rst.getString("nomeProduto"));
+				bean.setPreco(rst.getDouble("preco"));
 				lista.add(bean);
 				
 			}			
@@ -134,9 +137,10 @@ public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface
 				bean.setId(rst.getInt("id_nota"));
 				bean.setDataInclusao(df.format(rst.getTimestamp("data_inclusao")));				
 				bean.setIdCliente(rst.getInt("id_cliente"));
-				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setNumeroPedido(rst.getInt("numPedido"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
-				bean.setNomeProduto(rst.getString("nome_produto"));
+				bean.setNomeProduto(rst.getString("nomeProduto"));
+				bean.setPreco(rst.getDouble("preco"));
 				lista.add(bean);
 				
 			}			
@@ -166,9 +170,10 @@ public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface
 				bean.setId(rst.getInt("id_nota"));
 				bean.setDataInclusao(df.format(rst.getTimestamp("data_inclusao")));				
 				bean.setIdCliente(rst.getInt("id_cliente"));
-				bean.setNumeroPedido(rst.getInt("numero_pedido"));
+				bean.setNumeroPedido(rst.getInt("numPedido"));
 				bean.setNomeCliente(rst.getString("nomeCliente"));
-				bean.setNomeProduto(rst.getString("nome_produto"));
+				bean.setNomeProduto(rst.getString("nomeProduto"));
+				bean.setPreco(rst.getDouble("preco"));
 				lista.add(bean);
 				
 			}			
@@ -193,6 +198,7 @@ public class NotaFiscalDAO extends ConnectionPool implements NotaFiscalInterface
 		try {
 			
 			notaFiscal.setPreco(daoPedido.getPedidoSomaByNumeroPedido(notaFiscal.getNumeroPedido()));
+			System.out.println("Preço: " + notaFiscal.getPreco());
 			
 			pstm = super.getConnection().prepareStatement(sqlInsertNotaFiscal);			
 			pstm.setInt(1, notaFiscal.getIdCliente());

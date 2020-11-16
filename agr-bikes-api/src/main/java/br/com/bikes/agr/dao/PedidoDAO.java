@@ -19,7 +19,7 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 	private final String sqlSelectPedidosByIdCliente = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where pdo.id_cliente = ?";
 	private final String sqlSelectPedidosByIdClienteRecente = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente and pdo.id_cliente = ? and status_pedido = 0 order by numPedido desc limit 1";
 	private final String sqlSelectPedidoByNumeroPedido = "select id_pedido, numero_pedido as numPedido, status_pedido as status, pdo.id_cliente, pdo.id_produto, pdt.descricao as nomeProduto, cli.nome as nomeCliente from pedido as pdo, produto as pdt, cliente as cli where pdo.id_produto = pdt.id_produto and pdo.id_cliente = cli.id_cliente where numPedido = ?";
-	private final String sqlSelectPedidoSomaByNumeroPedido = "select sum(prc.preco) from pedido as pdd, produto as pdt preco as prc where numPedido = ? and pdd.id_produto = pdt.id_produto group by prc.preco";
+	private final String sqlSelectPedidoSomaByNumeroPedido = "select sum(prc.valor) as soma from pedido as pdd, produto as pdt, preco as prc where pdd.numero_pedido = ? and pdd.status_pedido = 1 and pdd.id_produto = pdt.id_produto group by prc.valor";
 	private final String sqlInsertPedido = "insert into pedido (numero_pedido, status_pedido, id_produto, id_cliente) values (?, 0, ?, ?)";
 	private final String sqlUpdatePedido = "update pedido set status_pedido = ? where numero_pedido = ?";											
 	private final String sqlDeletePedido = "delete from pedido where id_pedido = ?";
@@ -202,6 +202,7 @@ public class PedidoDAO extends ConnectionPool implements PedidoInterface {
 			if(rst.next()) {
 				
 				soma = rst.getDouble("soma");
+				System.out.println("Soma: " + soma);
 												
 			}			
 		}
