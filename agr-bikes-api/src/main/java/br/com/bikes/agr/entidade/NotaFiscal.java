@@ -6,7 +6,8 @@ public class NotaFiscal {
 	private String dataInclusao;
 	private int numeroNota;
 	private int idCliente;
-	private int numeroPedido;	
+	private int numeroPedido;
+	private double Preco;
 	private String nomeCliente;
 	private String nomeProduto;	
 	
@@ -39,6 +40,12 @@ public class NotaFiscal {
 	}
 	public void setNumeroPedido(int numeroPedido) {
 		this.numeroPedido = numeroPedido;
+	}	
+	public double getPreco() {
+		return Preco;
+	}
+	public void setPreco(double preco) {
+		Preco = preco;
 	}
 	public String getNomeCliente() {
 		return nomeCliente;

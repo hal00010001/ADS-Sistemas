@@ -1,0 +1,1 @@
+alter table nota_fiscal add preco double

@@ -117,6 +117,25 @@ public class PedidoService {
 		return resultado;
 		
 	}	
+	
+	@GET
+	@Path("/numero-pedido/{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Pedido> listarPedidoByNumeroPedido(@PathParam("id") int numPedido ){
+		
+		List<Pedido> lista = null;
+		
+		try {
+			lista = dao.getPedidoByNumeroPedido(numPedido);
+		}
+		catch (Exception ex) {
+			System.out.println("Erro: " + ex.getMessage());
+		}
+		
+		return lista;
+		
+	} 
 				
 	@POST	
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -158,10 +177,10 @@ public class PedidoService {
 			System.out.println("Erro: " + ex.getMessage());			
 		}
 		if(linhasAlteradas > 0) {
-			msg = "Pedido atualizado com sucesso!";
+			msg = "Pedido finalizado com sucesso!";
 		}
 		else {
-			msg = "Pedido não foi atualizado!";
+			msg = "Pedido não foi finalizado!";
 		}		
 		
 		return msg;
