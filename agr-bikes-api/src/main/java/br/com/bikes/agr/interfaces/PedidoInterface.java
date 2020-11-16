@@ -8,6 +8,7 @@ public interface PedidoInterface {
 
 	List<Pedido> getPedidosLista();
 	int getPedidoRecenteLista();
+	int getPedidoRecenteNovoLista();
 	List<Pedido> getPedidosByIdProdutoLista(int id);
 	List<Pedido> getPedidosByIdClienteLista(int id);
 	List<Pedido> getPedidoByNumeroPedido(int numPedido);
