@@ -1,6 +1,7 @@
 package br.com.bikes.agr.config;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -58,6 +59,28 @@ public class ConnectionPool {
             if (p6 != null && !"".equals(p6)) {                
                 pstm.setString(6, p6);
             }            
+            return pstm.executeQuery();
+        }
+        catch (SQLException sqle) {
+            System.out.println("Erro SQL: "+sqle.getMessage()+" com a string: "+sql);
+            return null;
+        }
+        catch (Exception ex){
+            System.out.println("Erro SQL: "+ex.getMessage()+" com a string: "+sql);
+            return null;
+        }
+    }
+    
+    protected ResultSet getResultSet(String sql, Date p1, Date p2) {
+        try {            
+            PreparedStatement pstm = getConnection().prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            if (p1 != null && !"".equals(p1)) {                
+                pstm.setDate(1, p1);
+            }
+            if (p2 != null && !"".equals(p2)) {                
+                pstm.setDate(2, p2);
+            }
+                       
             return pstm.executeQuery();
         }
         catch (SQLException sqle) {

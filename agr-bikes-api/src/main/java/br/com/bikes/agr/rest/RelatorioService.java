@@ -51,10 +51,16 @@ public class RelatorioService {
 		
 		String dataInicio = null;
 		String dataTermino = null;
-		//String idString = String.valueOf(id);
+				
+		dataInicio = id.substring(0, 8);
+		dataTermino = id.substring(8, 16);
 		
-		dataInicio = id.substring(0, 6);
-		dataTermino = id.substring(6, 12);
+		int dataTerminoInt = Integer.parseInt(dataTermino) + 1;
+		
+		dataTermino = String.valueOf(dataTerminoInt);		
+		
+		dataInicio = dataInicio.substring(0, 2) + "/" + dataInicio.substring(2, 4) + "/" + dataInicio.substring(4, 8);
+		dataTermino = dataTermino.substring(0, 2) + "/" + dataTermino.substring(2, 4) + "/" + dataTermino.substring(4, 8);
 		
 		System.out.println("Início: " + dataInicio + " Término: " + dataTermino);
 		

@@ -48,12 +48,13 @@ public class RelatorioDAO extends ConnectionPool implements RelatorioInterface	{
 	public List<NotaFiscal> getVendasMensaisLista(String dataInicio, String dataTermino) {
 		
 		List<NotaFiscal> lista = new ArrayList<>();
-		ResultSet rst = this.getVendasMensais(dataInicio, dataTermino);	
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		ResultSet rst = null;
 		
 		try {
-			while(rst.next()) {
-				
-				DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+			rst = this.getVendasMensais((java.util.Date)df.parse(dataInicio), (java.util.Date)df.parse(dataTermino));		
+		
+			while(rst.next()) {				
 								
 				var bean = new NotaFiscal();
 				bean.setId(rst.getInt("id_nota"));
@@ -81,8 +82,8 @@ public class RelatorioDAO extends ConnectionPool implements RelatorioInterface	{
 		return super.getResultSet(sqlSelectMaisVendidos);
 	}
 	
-	protected ResultSet getVendasMensais(String dataInicio, String dataTermino) {
-		return super.getResultSet(sqlSelectVendasMensais, dataInicio, dataTermino);
+	protected ResultSet getVendasMensais(java.util.Date dataInicio, java.util.Date dataTermino) {
+		return super.getResultSet(sqlSelectVendasMensais, new java.sql.Date(dataInicio.getTime()), new java.sql.Date(dataTermino.getTime()));
 	}
 	
 }
