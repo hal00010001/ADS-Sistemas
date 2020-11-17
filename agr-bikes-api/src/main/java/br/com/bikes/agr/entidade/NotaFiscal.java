@@ -3,10 +3,10 @@ package br.com.bikes.agr.entidade;
 public class NotaFiscal {
 
 	private int id;
-	private String dataInclusao;
-	private int numeroNota;
+	private String dataInclusao;	
 	private int idCliente;
-	private int numeroPedido;	
+	private int numeroPedido;
+	private double Preco;
 	private String nomeCliente;
 	private String nomeProduto;	
 	
@@ -21,13 +21,7 @@ public class NotaFiscal {
 	}
 	public void setDataInclusao(String dataInclusao) {
 		this.dataInclusao = dataInclusao;
-	}
-	public int getNumeroNota() {
-		return numeroNota;
-	}
-	public void setNumeroNota(int numeroNota) {
-		this.numeroNota = numeroNota;
-	}
+	}	
 	public int getIdCliente() {
 		return idCliente;
 	}
@@ -39,6 +33,12 @@ public class NotaFiscal {
 	}
 	public void setNumeroPedido(int numeroPedido) {
 		this.numeroPedido = numeroPedido;
+	}	
+	public double getPreco() {
+		return Preco;
+	}
+	public void setPreco(double preco) {
+		Preco = preco;
 	}
 	public String getNomeCliente() {
 		return nomeCliente;

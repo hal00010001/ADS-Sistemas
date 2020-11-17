@@ -122,7 +122,7 @@ public class NotaFiscalService {
 	@POST	
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String adicionarCategoria(NotaFiscal notaFiscal) {
+	public String adicionarNotaFiscal(NotaFiscal notaFiscal) {
 		
 		String msg = "";
 		int linhasAlteradas = 0;
@@ -148,7 +148,7 @@ public class NotaFiscalService {
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String atualizarCategoria(@PathParam("id") int id, NotaFiscal notaFiscal) {
+	public String atualizarNotaFiscal(@PathParam("id") int id, NotaFiscal notaFiscal) {
 		
 		String msg = "";
 		int linhasAlteradas = 0;
@@ -174,7 +174,7 @@ public class NotaFiscalService {
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String removerCategoria(@PathParam("id") int id) {
+	public String removerNotaFiscal(@PathParam("id") int id) {
 		
 		String msg = "";
 		int linhasAlteradas = 0;
