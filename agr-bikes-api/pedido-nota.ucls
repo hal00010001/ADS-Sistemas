@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="br.com.bikes.agr.entidade.Pedido" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/entidade/Pedido.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="125" y="82"/>    
+    <position height="457" width="165" x="27" y="-134"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   <interface id="2" language="java" name="br.com.bikes.agr.interfaces.PedidoInterface" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/interfaces/PedidoInterface.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="353" y="-28"/>    
+    <position height="-1" width="-1" x="351" y="-2"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   </interface>  
   <class id="3" language="java" name="br.com.bikes.agr.dao.PedidoDAO" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/dao/PedidoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="656" y="88"/>    
+    <position height="-1" width="-1" x="684" y="184"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="br.com.bikes.agr.rest.PedidoService" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/rest/PedidoService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="970" y="17"/>    
+    <position height="-1" width="-1" x="1020" y="81"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -40,7 +40,7 @@
   </class>  
   <class id="5" language="java" name="br.com.bikes.agr.entidade.NotaFiscal" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/entidade/NotaFiscal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="126" y="552"/>    
+    <position height="-1" width="-1" x="110" y="566"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -50,7 +50,7 @@
   <interface id="6" language="java" name="br.com.bikes.agr.interfaces.NotaFiscalInterface" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/interfaces/NotaFiscalInterface.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="386" y="437"/>    
+    <position height="-1" width="-1" x="368" y="569"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -59,7 +59,7 @@
   </interface>  
   <class id="7" language="java" name="br.com.bikes.agr.dao.NotaFiscalDAO" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/dao/NotaFiscalDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="723" y="558"/>    
+    <position height="-1" width="-1" x="731" y="755"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -69,7 +69,7 @@
   <class id="8" language="java" name="br.com.bikes.agr.rest.NotaFiscalService" project="agr-bikes-api" 
     file="/agr-bikes-api/src/main/java/br/com/bikes/agr/rest/NotaFiscalService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1089" y="497"/>    
+    <position height="-1" width="-1" x="1091" y="666"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,22 +84,22 @@
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="12">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="13">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <association id="14">    
+  <association id="12">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="15" name="dao"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
+      <attribute id="13" name="dao"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="16">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
