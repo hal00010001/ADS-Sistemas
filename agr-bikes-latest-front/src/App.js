@@ -11,6 +11,9 @@ import ItensEstoque from './components/forms/ItensEstoque';
 import Login from './components/forms/Login';
 import FazerPedido from './components/forms/FazerPedido';
 import AtualizarEstoque from './components/forms/AtualizarEstoque';
+import ListarEstoque from './components/ListarEstoque';
+import ListarAvaliacoes from './components/ListarAvaliacoes';
+
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -31,6 +34,9 @@ function App() {
 				<Route path="/cupom" component={EmitirCupom} />
 				<Route path="/relatorios" component={RelatorioDeVendas} />
 				<Route path="/estoque" component={AtualizarEstoque} />
+				<Route path="/listarestoque" component={ListarEstoque} />
+				<Route path="/listaravaliacoes" component={ListarAvaliacoes} />
+				<Route path="/listarvendas" component={ListarVendas} />
 			</Switch>	
 		</div>
     </Router>

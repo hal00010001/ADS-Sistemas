@@ -5,7 +5,7 @@ const AdicionarAvaliacao = () => {
 	const [nota, setNota] = React.useState('')
 	const [idCliente, setIdCliente] = React.useState('')
 	
-    function handleSubmit(event){        
+    function handleSubmit(event){
         fetch('http://localhost:8080/avaliacao', {
             method: 'POST',
             headers: {
